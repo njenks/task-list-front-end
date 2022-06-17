@@ -3,20 +3,24 @@ import PropTypes from 'prop-types';
 
 import './Task.css';
 
-const Task = ({ id, title, isComplete }) => {
-  const [complete, setComplete] = useState(isComplete);
-  const buttonClass = complete ? 'tasks__item__toggle--completed' : '';
+const Task = (props) => {
+
+  const flipComplete = () => {
+    props.completeCallback(props.id);
+  };
 
   return (
-    <li className="tasks__item">
-      <button
-        className={`tasks__item__toggle ${buttonClass}`}
-        onClick={() => setComplete(!complete)}
-      >
-        {title}
-      </button>
-      <button className="tasks__item__remove button">x</button>
-    </li>
+    <div>
+      <h2 className="tasks__item"> {props.title} </h2>
+      <ul>
+        <li> {props.isComplete? 'tasks__item__toggle--completed' : 'tasks__item__toggle'} </li>
+        <button
+          //className={`tasks__item__toggle ${buttonClass}`}
+          onClick={flipComplete}> Change Task </button>
+          {/* <button className="tasks__item__remove button">x</button>
+        </li> */}
+      </ul>
+    </div>
   );
 };
 
