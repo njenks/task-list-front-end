@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-
 import './Task.css';
 
 const Task = (props) => {
-
-  const flipComplete = () => {
+  const flipMyComplete = () => {
+    // eslint-disable-next-line react/prop-types
     props.completeCallback(props.id);
   };
 
@@ -13,11 +12,14 @@ const Task = (props) => {
     <div>
       <h2 className="tasks__item"> {props.title} </h2>
       <ul>
-        <li> {props.isComplete? 'tasks__item__toggle--completed' : 'tasks__item__toggle'} </li>
+        <li>{props.isComplete ? 'completed' : 'not completed'}</li>
         <button
-          //className={`tasks__item__toggle ${buttonClass}`}
-          onClick={flipComplete}> Change Task </button>
-          {/* <button className="tasks__item__remove button">x</button>
+          // className={`tasks__item__toggle ${buttonClass}`}
+          onClick={flipMyComplete}
+        >
+          Change Task
+        </button>
+        {/* <button className="tasks__item__remove button">x</button>
         </li> */}
       </ul>
     </div>

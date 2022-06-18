@@ -36,11 +36,8 @@ function App() {
       </header>
       <main>
         <div>
-          <TaskList 
-          tasks={tasks}
-          completeCallback={flipComplete}
-          />
-          </div>
+          <TaskList tasks={tasks} completeCallback={flipComplete} />
+        </div>
       </main>
     </div>
   );

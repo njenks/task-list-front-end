@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Task from './Task';
+import Task from './Task.js';
 import './TaskList.css';
 
 const TaskList = (props) => {
@@ -11,6 +11,7 @@ const TaskList = (props) => {
         id={task.id}
         title={task.title}
         isComplete={task.isComplete}
+        // eslint-disable-next-line react/prop-types
         completeCallback={props.completeCallback}
       />
     );
