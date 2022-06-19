@@ -11,7 +11,6 @@ const TaskList = (props) => {
         id={task.id}
         title={task.title}
         isComplete={task.isComplete}
-        // eslint-disable-next-line react/prop-types
         completeCallback={props.completeCallback}
       />
     );
@@ -27,6 +26,7 @@ TaskList.propTypes = {
       isComplete: PropTypes.bool.isRequired,
     })
   ).isRequired,
+  completeCallback: PropTypes.func.isRequired,
 };
 
 export default TaskList;
