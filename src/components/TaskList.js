@@ -12,6 +12,7 @@ const TaskList = (props) => {
         title={task.title}
         isComplete={task.isComplete}
         completeCallback={props.completeCallback}
+        deleteCallback={props.deleteCallback}
       />
     );
   });
@@ -27,6 +28,7 @@ TaskList.propTypes = {
     })
   ).isRequired,
   completeCallback: PropTypes.func.isRequired,
+  deleteCallback: PropTypes.func.isRequired,
 };
 
 export default TaskList;

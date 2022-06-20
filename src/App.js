@@ -26,7 +26,16 @@ function App() {
       updatedTasks.push(task);
     }
     setTasks(updatedTasks);
-    console.log('Successfully flipped');
+  };
+
+  const deleteTask = (id) => {
+    const updatedTasks = [];
+    for (const task of tasks) {
+      if (task.id !== id) {
+        updatedTasks.push(task);
+      }
+    }
+    setTasks(updatedTasks);
   };
 
   return (
@@ -36,7 +45,11 @@ function App() {
       </header>
       <main>
         <div>
-          <TaskList tasks={tasks} completeCallback={flipComplete} />
+          <TaskList
+            tasks={tasks}
+            completeCallback={flipComplete}
+            deleteCallback={deleteTask}
+          />
         </div>
       </main>
     </div>
