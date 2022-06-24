@@ -11,6 +11,7 @@ const TaskList = (props) => {
           key={task.id}
           id={task.id}
           title={task.title}
+          description={task.description}
           isComplete={task.isComplete}
           completeCallback={props.completeCallback}
           deleteCallback={props.deleteCallback}
@@ -26,7 +27,8 @@ TaskList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      isComplete: PropTypes.bool.isRequired,
+      isComplete: PropTypes.bool,
+      describe: PropTypes.string.isRequired,
     })
   ).isRequired,
   completeCallback: PropTypes.func.isRequired,
